@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Company</title>
+
+    <link rel="stylesheet" href="css/app.min.css"/>
+    <link rel="stylesheet" href="css/animate.min.css"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="promo" class="promo promo-gradient">
+        <div class="site-container">
+            <div class="promo-content">
+                <div class="promo-content__info">
+                    <div class="header">
+                        <img src="img/logo.png" alt="Логотип" class="animated bounce">
+                    </div>
+                    <h2 class="promo_white animated fadeInLeft">С помощью нас</h2>
+                    <h2 class="promo_white animated fadeInLeft">вы сможете создать то, о чем</h2>
+                    <h1 class="promo_white animated fadeInLeft">желаете!</h1>
+                    <p class="promo_white animated fadeInLeft">Наши возможности + опыт позволят Вам достичь огромного успеха. Мы верим в вас! И знаем это на 100%. Вас не остановить!</p>
+                    <button id="knowMore" class="promo-content__button" onclick="knowMore()">Узнать больше...</button>
+                </div>
+                <div class="promo-content__picture">
+                    <img id="image" onclick="flip()" src="img/header-img.png" alt="Промо изображение">
+                </div>
+            </div>
+            <div class="line line-gradient"></div>
+        </div>
+    </div>
+    <div class="necessary">
+        <div class="site-container">
+            <h2 class="site-title">Что вам необходимо?</h2>
+            <div class="blocks">
+                <div class="block">
+                    <div class="block__image">
+                        <img src="img/f3.png" alt="Первая необходимость" class="zoomTarget">
+                    </div>
+                    <div class="block__title">
+                        <h4>Первый блок</h4>
+                    </div>
+                    <div class="block__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+                <div class="block">
+                    <div class="block__image">
+                        <img src="img/f4.png" alt="Вторая необходимость" class="zoomTarget">
+                    </div>
+                    <div class="block__title">
+                        <h4>Второй блок</h4>
+                    </div>
+                    <div class="block__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+                <div class="block">
+                    <div class="block__image">
+                        <img src="img/f5.png" alt="Третья необходимость" class="zoomTarget">
+                    </div>
+                    <div class="block__title">
+                        <h4>Третий блок</h4>
+                    </div>
+                    <div class="block__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="callback">
+        <div class="site-container">
+            <h2 class="site-title">
+                Форма заказа обратного звонка
+            </h2>
+            <form action="#" class="user-input">
+                <input type="text" placeholder="Имя" required>
+                <input type="email" placeholder="Введите свой E-mail" required>
+                <input type="tel" placeholder="Телефон" required>
+                <input type="text" placeholder="Какая тема вас интересует?" required>
+                <input type="submit" value="Отправить вопрос!">
+            </form>
+        </div>
+    </div>
+    <div class="custom-form">
+        <div class="site-container">
+            <h2 class="site-title">
+                Заполните данные ниже для заказа чего-то крутого! <span class="smile">=)</span>
+            </h2>
+            <div class="custom-form-inner">
+                <div class="form-content">
+                    <form id="custom-form" action="#">
+                        <div class="custom-form__title">
+                            <h4>Информация о заказе</h4>
+                        </div>
+                        <div class="custom-form__group">
+                            <div class="name-and-error">
+                                <input id="name" type="text" placeholder="Имя" onblur="checkName();" required>
+                                <span id="nameError" class="error"></span>
+                            </div>
+                            <div class="success-box">
+                                <img id="nameSuccess" class="success-icon" src="img/success.png" alt="Успех!">
+                            </div>
+                        </div>
+                        <div class="custom-form__group">
+                            <div class="name-and-error">
+                                <input id="lname" type="text" placeholder="Фамилия" onblur="checkLName();" required>
+                                <span id="lnameError" class="error"></span>
+                            </div>
+                            <img id="lnameSuccess" class="success-icon" src="img/success.png" alt="Успех!">
+                        </div>
+                        <div class="custom-form__group">
+                            <div class="name-and-error">
+                                <input id="phone" type="tel" placeholder="Номер телефона" onblur="checkPhone();" required>
+                                <span id="phoneError" class="error"></span>
+                            </div>
+                            <img id="phoneSuccess" class="success-icon" src="img/success.png" alt="Успех!">
+                        </div>
+                        <div class="custom-form__group">
+                            <div class="name-and-error">
+                                <input id="email" type="email" placeholder="Почта" onblur="checkEmail();" required>
+                                <span id="emailError" class="error"></span>
+                            </div>
+                            <img id="emailSuccess" class="success-icon" src="img/success.png" alt="Успех!">
+                        </div>
+                        <div class="custom-form__group">
+                            <div class="name-and-error">
+                                <input id="address" type="text" placeholder="Адрес" onblur="checkAddress();" required>
+                                <span id="addressError" class="error"></span>
+                            </div>
+                            <img id="addressSuccess" class="success-icon" src="img/success.png" alt="Успех!">
+
+                        </div>
+                        <div class="custom-form__group">
+                            <div class="name-and-error">
+                                <input id="count" type="number" min="1" placeholder="Количество чего-то крутого" onblur="checkCount();" required>
+                                <span id="countError" class="error"></span>
+                            </div>
+                            <img id="countSuccess" class="success-icon" src="img/success.png" alt="Успех!">
+                        </div>
+                        <div class="pay-and-order">
+                            <label>Метод оплаты</label>
+                            <select id="paymethod">
+                                <option>Cash</option>
+                                <option>Card</option>
+                                <option>PayPal</option>
+                            </select>
+                            <div class="order" onclick="getSummaryData()">
+                                <span class="order-button">Заказать!</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="summary">
+                    <div class="summary__title">
+                        <h4>Итоговая информация</h4>
+                    </div>
+                    <span id="summary__info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="footer-copyright">&#169; Все на этом сайте защищено</p>
+    </div>
+
+    <script src="js/app.min.js"></script>
+</body>
+</html>
